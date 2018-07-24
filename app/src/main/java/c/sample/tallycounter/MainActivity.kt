@@ -4,8 +4,13 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * メインアクティビティ
+ * トップ画面のアクティビティ。
+ */
 class MainActivity : AppCompatActivity() {
 
     var i = 0;
