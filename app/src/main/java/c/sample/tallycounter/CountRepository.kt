@@ -6,4 +6,13 @@ package c.sample.tallycounter
  */
 class CountRepository() {
 
+    // 取得
+    fun getCount() {
+        
+    }
+
+    // 保存
+    fun saveCount() {
+
+    }
 }

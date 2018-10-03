@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import io.realm.Realm
+import io.realm.RealmConfiguration
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -18,6 +19,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //Realmの初期化
+        Realm.init(this)
+        val config = RealmConfiguration.Builder().build()
+        Realm.setDefaultConfiguration(config)
 
         button.setOnClickListener {
             Log.d("MainActivity", "button click")
