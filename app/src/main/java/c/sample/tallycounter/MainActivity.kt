@@ -20,11 +20,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Realmの初期化
-        Realm.init(this)
-        val config = RealmConfiguration.Builder().build()
-        Realm.setDefaultConfiguration(config)
-
         button.setOnClickListener {
             Log.d("MainActivity", "button click")
             i += 1

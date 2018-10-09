@@ -8,7 +8,7 @@ class CountRepository() {
 
     // 取得
     fun getCount() {
-        
+
     }
 
     // 保存

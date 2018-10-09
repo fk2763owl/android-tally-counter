@@ -1,4 +1,4 @@
-package c.sample.tallycounter
+package c.sample.tallycounter.Data
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
@@ -14,6 +14,7 @@ import java.util.*
  * この状況を防ぐためにopen修飾子をつけています。
  */
 open class CountData(
+        @PrimaryKey var id: Int = 0,
         @PrimaryKey var count: Int = 0
 ): RealmObject() {
 
