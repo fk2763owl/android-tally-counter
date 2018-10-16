@@ -3,6 +3,8 @@ package c.sample.tallycounter
 /**
  * カウントリポジトリ
  * CRUD操作を行う。
+ * CountRepository.getCountでカウントデータ
+ * CountRepository.saveCountで
  */
 class CountRepository() {
 

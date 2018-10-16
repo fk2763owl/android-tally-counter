@@ -14,7 +14,6 @@ import java.util.*
  * この状況を防ぐためにopen修飾子をつけています。
  */
 open class CountData(
-        @PrimaryKey var id: Int = 0,
         @PrimaryKey var count: Int = 0
 ): RealmObject() {
 
