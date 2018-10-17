@@ -1,5 +1,9 @@
 package c.sample.tallycounter
 
+import c.sample.tallycounter.Data.CountData
+import io.realm.Realm
+import io.realm.RealmResults
+
 /**
  * カウントリポジトリ
  * CRUD操作を行う。
@@ -8,9 +12,15 @@ package c.sample.tallycounter
  */
 class CountRepository() {
 
-    // 取得
-    fun getCount() {
+    // Realm
+    private lateinit var realm: Realm
 
+    // 取得
+    fun getCount(): Int{
+        realm = Realm.getDefaultInstance()
+        val countData:Int = realm.where(CountData::class.java).equalTo("count", 0)
+
+        return countData
     }
 
     // 保存

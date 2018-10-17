@@ -4,7 +4,9 @@ import android.support.test.filters.SmallTest
 import android.support.test.runner.AndroidJUnit4
 import c.sample.tallycounter.Data.CountData
 import io.realm.Realm
+import io.realm.RealmResults
 import junit.framework.Assert.assertEquals
+import org.junit.Test
 import org.junit.runner.RunWith
 
 /**
@@ -22,14 +24,21 @@ class CountRepositoryTest {
     // Realm
     private lateinit var realm: Realm
 
+
+
+
     // 取得
+    @Test
     fun getCount() {
         // Given サンプルデータを用意した状態で
 
         realm = Realm.getDefaultInstance()
 
         realm.executeTransaction { realm ->
-            val countData = realm.createObject<CountData>(CountData::class.java, 0)
+            // val countData = realm.createObject<CountData>(CountData::class.java, 0)
+            val countData = CountData()
+            countData.count = 0
+            realm.copyToRealmOrUpdate(countData)
         }
 
         // When 取得すると
@@ -37,7 +46,10 @@ class CountRepositoryTest {
         val ideal = countRepository.getCount();
 
         // Then 保存したデータと同じデータを取得できる。
-        assertEquals(ideal, CountData(0))
+
+        val countData: CountData = CountData(0)
+
+        assertEquals(CountData(0), ideal)
     }
 
     // 保存、取得
